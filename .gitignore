@@ -2,4 +2,5 @@ venv
 mongo_logs.log
 __pycache__
 mongo/db/*
+!mongo/db/.gitkeep
 mongo/mongo_logs.log
