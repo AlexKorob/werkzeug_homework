@@ -45,5 +45,3 @@ class View(object):
                 return redirect("/")
             return self.render_template("add_note.html", errors=errors, title=title, description=description)
         return self.render_template("add_note.html", errors=errors)
-
-view = View()

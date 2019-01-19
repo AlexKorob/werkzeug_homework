@@ -4,15 +4,16 @@ from werkzeug.routing import Map, Rule
 from werkzeug.exceptions import HTTPException, NotFound
 from werkzeug.wsgi import SharedDataMiddleware
 from werkzeug.serving import run_simple
-from view import view
+from view import View
 from manager import Manager
 
 
 class Main:
     def __init__(self):
-        self.url_map = Map([Rule('/', endpoint=view.notes),
-                            Rule('/notes', endpoint=view.notes),
-                            Rule('/add_note', endpoint=view.add_note)])
+        self.view = View()
+        self.url_map = Map([Rule('/', endpoint=self.view.notes),
+                            Rule('/notes', endpoint=self.view.notes),
+                            Rule('/add_note', endpoint=self.view.add_note)])
         self.manager = Manager("localhost", 27017)
 
     def dispatch_request(self, request):
