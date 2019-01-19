@@ -5,21 +5,21 @@ from werkzeug.exceptions import HTTPException, NotFound
 from werkzeug.wsgi import SharedDataMiddleware
 from werkzeug.serving import run_simple
 from view import view
+from manager import Manager
 
 
 class Main:
     def __init__(self):
         self.url_map = Map([Rule('/', endpoint=view.notes),
                             Rule('/notes', endpoint=view.notes),
-                            Rule('/add_note', endpoint=view.add_note),
-                            Rule('/<none>', endpoint=None)])
+                            Rule('/add_note', endpoint=view.add_note)])
+        self.manager = Manager("localhost", 27017)
 
     def dispatch_request(self, request):
         adapter = self.url_map.bind_to_environ(request.environ)
         try:
             endpoint, values = adapter.match()
-            if endpoint == None:
-                raise NotFound()
+            request.db = self.manager
             return endpoint(request, **values)
         except HTTPException as e:
             return e

@@ -1,6 +1,5 @@
 import os
 from werkzeug.wrappers import Response
-from manager import manager
 from jinja2 import Environment, FileSystemLoader
 from werkzeug.utils import redirect
 
@@ -32,7 +31,7 @@ class View(object):
 
     def notes(self, request):
         if request.method == "GET":
-            notes = manager.all_notes()
+            notes = request.db.all_notes()
             return self.render_template('notes.html', notes=notes)
 
     def add_note(self, request):
@@ -42,7 +41,7 @@ class View(object):
             title = request.form["title"]
             description = request.form["description"]
             if validate:
-                manager.add_note(title=title, description=description)
+                request.db.add_note(title=title, description=description)
                 return redirect("/")
             return self.render_template("add_note.html", errors=errors, title=title, description=description)
         return self.render_template("add_note.html", errors=errors)

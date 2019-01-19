@@ -23,6 +23,3 @@ class Manager(object):
 
     def close(self):
         self.db.close()
-
-
-manager = Manager()
