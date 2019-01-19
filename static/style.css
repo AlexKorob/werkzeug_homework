@@ -1,0 +1,129 @@
+body {
+  background: #E8EFF0;
+  margin: 0;
+  padding: 0;
+}
+body, input {
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+.box {
+  width: 1080px;
+  margin: 60px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 4px #BED1D4;
+  border-radius: 5px;
+}
+.btn_create {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #33a;
+  position: relative;
+  left: 20px;
+  top: 15px;
+}
+.btn_create a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
+}
+.btn_create a:hover, .create a:focus {
+  background-color: #a33;
+  border-radius: 5px;
+}
+.notes {
+  width: 800px;
+  margin: 0 auto;
+}
+.note {
+  display: flex;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  border: 2px solid grey;
+  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  color: #a3a;
+  font-size: 24px;
+  margin-top: 0;
+}
+.date_creation {
+  display: inline-block;
+  color: #ccc;
+  position: relative;
+  top: 25px;
+  right: 300px;
+  margin: 0;
+}
+.description{
+  color: #3aa;
+  margin: 0;
+  font-size: 22px;
+}
+input {
+  height: 24px;
+  border-radius: 5px;
+}
+input:hover {
+  background-color: #22b;
+}
+input:focus {
+  background-color: white;
+}
+.add_form {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 480px;
+}
+#form_submit {
+  display: block;
+  margin: 0 auto;
+  width: 180px;
+  height: 70px;
+  border-radius: 20px;
+  background-color: #33a;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  line-height: 70px;
+  outline: none;
+}
+#form_submit:hover, #form_submit:focus {
+  outline: none;
+  border: none;
+  background-color: #a33;
+  cursor: pointer;
+}
+button, button:active, button:focus {
+    outline: none;
+}
+.form_row {
+  margin-bottom: 40px;
+}
+.add_form .form_row > label {
+  display: inline-block;
+  width: 220px;
+  color: #888;
+  font-size: 20px;
+}
+h2 {
+  color: #888;
+  margin: 0 auto;
+  text-align: center;
+}
+.error {
+  background: #E8EFF0;
+  padding: 3px 8px;
+  color: #822;
+  font-size: 0.9em;
+  border-radius: 2px;
+}
+.urlinput   { width: 300px; }

@@ -1,0 +1,5 @@
+venv
+mongo_logs.log
+__pycache__
+mongo/db/*
+mongo/mongo_logs.log

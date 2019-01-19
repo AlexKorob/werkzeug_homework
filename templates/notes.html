@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Объявления{% endblock %}
+{% block body %}
+  <h2> Объявления </h2>
+<div class="btn_create">
+  <a href="/add_note">+ Создать</a>
+</div>
+
+<div class="notes">
+  {% for note in notes %}
+    <div class="note">
+      <p class="date_creation"> {{ note["date_creation"] }} </p>
+      <p class="title">{{ note["title"] }}</p>
+      <p class="description">Описание</p>
+      <p>{{ note["description"] }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

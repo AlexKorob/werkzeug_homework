@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %} Добавить обьявление {% endblock %}
+
+{% block body %}
+  <h2> Добавить Объявление </h2>
+  <div class="btn_create">
+    <a href="/notes">На главную</a>
+  </div>
+
+  <div class='add_form'>
+    <form action="" method="post">
+      {% if errors %}
+        {% for error in errors%}
+          <p class=error><strong>Error:</strong> {{ error }}
+        {% endfor %}
+      {% endif %}
+
+      <div class="form_row">
+        <label for="form_title">Введите Название: </label>
+        <input type=text name=title value="{{ title }}" id="form_title">
+      </div>
+
+      <div class="form_row">
+        <label for="form_description">Введите Описание: </label>
+        <textarea type=text name=description id="form_description" style="width: 480px; height: 150px;">{{ description }}</textarea>
+      </div>
+
+      <button id="form_submit" type=submit>Создать</button>
+
+    </form>
+  </div>
+
+{% endblock %}
